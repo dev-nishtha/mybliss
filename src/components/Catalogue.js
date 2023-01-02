@@ -11,6 +11,7 @@ import {
   Row,
   Col,
   Badge,
+  Button,
 } from "reactstrap";
 
 function Catalogue(props) {
@@ -103,6 +104,17 @@ function Catalogue(props) {
               </span>
               <span id="price">&nbsp;INR{product.variants[0].price}</span>
             </CardText>
+            <CardImgOverlay className="d-flex">
+              {product.variants[0].inventory_quantity != 0 ? (
+                <Button id="view-button" className="align-self-center mx-auto">
+                  View
+                </Button>
+              ) : (
+                <Button id="oof-button" className="align-self-center mx-auto">
+                  Out of Stock
+                </Button>
+              )}
+            </CardImgOverlay>
           </CardBody>
         </Card>
       </Col>

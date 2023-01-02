@@ -1,10 +1,21 @@
 .card {
   height: 100%;
   border-radius: 0px;
-  border: 10px;
+  border: 10px;  
+}
+.card:hover{
+  background-color: rgb(215, 213, 213);
+}
+#view-button, #oof-button{
+  display: none;
+  padding: 2vh 3vw;
+}
+.card:hover #view-button, .card:hover #oof-button {
+  display: block;
 }
 .card-img {
   padding: 2vh;
+  
 }
 .card-body {
   text-align: center;
@@ -18,10 +29,17 @@
 #compare-price {
   text-decoration: line-through;
 }
-.badge {
-  background-color: #cf7068 !important;
+.badge, #view-button, #oof-button { 
   width: fit-content;
   border-radius: 0px !important;
-  font-size: 1vw;
   font-weight: 200;
+  font-size: 1vw;
+  border: 0px;
+}
+.badge, #view-button{
+  background-color: #cf7068 !important;
+}
+#oof-button {
+  background-color: grey;
+  cursor: not-allowed;
 }
