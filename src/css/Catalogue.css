@@ -1,0 +1,27 @@
+.card {
+  height: 100%;
+  border-radius: 0px;
+  border: 10px;
+}
+.card-img {
+  padding: 2vh;
+}
+.card-body {
+  text-align: center;
+  padding: 4vh 1vw;
+}
+.card-title {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+#compare-price {
+  text-decoration: line-through;
+}
+.badge {
+  background-color: #cf7068 !important;
+  width: fit-content;
+  border-radius: 0px !important;
+  font-size: 1vw;
+  font-weight: 200;
+}
