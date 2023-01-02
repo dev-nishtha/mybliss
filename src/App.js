@@ -10,7 +10,7 @@ function App() {
       setOption("color");
     } else if (e.target.value === "price") {
       setOption("price");
-    }
+    } else setOption("featured");
   };
   return (
     <div className="App">

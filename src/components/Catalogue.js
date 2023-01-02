@@ -31,58 +31,84 @@ function Catalogue(props) {
         : -1;
     });
   }
+  function shuffle(sourceArray) {
+    for (var i = 0; i < sourceArray.length - 1; i++) {
+      var j = i + Math.floor(Math.random() * (sourceArray.length - i));
+
+      var temp = sourceArray[j];
+      sourceArray[j] = sourceArray[i];
+      sourceArray[i] = temp;
+    }
+    return sourceArray;
+  }
+  function shuffleByColor(colorGroup) {
+    const test = new Array();
+    shuffle(colorGroup);
+    for (let i = 0; i < colorGroup.length; i++) {
+      shuffle(colorGroup[i]);
+    }
+
+    for (let i = 0; i < colorGroup.length; i++) {
+      for (let j = 0; j < colorGroup[i].length; j++) {
+        test.push(colorGroup[i][j].product);
+      }
+    }
+    return test;
+  }
   function sortByColorGroup() {
-    const red = {};
-    const green = {};
-    const blue = {};
-    const yellow = {};
-    const pink = {};
-    const orange = {};
-    const purple = {};
-    const brown = {};
-    const white = {};
-    const others = {};
+    const red = [];
+    const green = [];
+    const blue = [];
+    const yellow = [];
+    const pink = [];
+    const orange = [];
+    const purple = [];
+    const brown = [];
+    const white = [];
+    const others = [];
 
     props.products.map((product) => {
       if (product.title.includes("Red") || product.title.includes("Maroon")) {
-        red[product.id] = product;
+        red.push({ product: product });
       } else if (product.title.includes("Green")) {
-        green[product.id] = product;
+        green.push({ product: product });
       } else if (
         product.title.includes("Blue") ||
         product.title.includes("Turquoise")
       ) {
-        blue[product.id] = product;
+        blue.push({ product: product });
       } else if (product.title.includes("Yellow")) {
-        yellow[product.id] = product;
+        yellow.push({ product: product });
       } else if (product.title.includes("Pink")) {
-        pink[product.id] = product;
+        pink.push({ product: product });
       } else if (product.title.includes("Orange")) {
-        orange[product.id] = product;
+        orange.push({ product: product });
       } else if (
         product.title.includes("Purple") ||
         product.title.includes("Lilac") ||
         product.title.includes("Lavender") ||
         product.title.includes("Violet")
       ) {
-        purple[product.id] = product;
+        purple.push({ product: product });
       } else if (product.title.includes("Brown")) {
-        brown[product.id] = product;
+        brown.push({ product: product });
       } else if (product.title.includes("White")) {
-        white[product.id] = product;
-      } else others[product.id] = product;
+        white.push({ product: product });
+      } else others.push({ product: product });
     });
-    const colorGroup = {
-      red: red,
-      green: green,
-      blue: blue,
-      yellow: yellow,
-      orange: orange,
-      purple: purple,
-      brown: brown,
-      white: white,
-      others: others,
-    };
+    const colorGroup = [
+      red,
+      green,
+      blue,
+      yellow,
+      pink,
+      orange,
+      purple,
+      brown,
+      white,
+      others,
+    ];
+    sortedProducts = shuffleByColor(colorGroup);
   }
 
   if (props.option === "color") {
@@ -105,7 +131,7 @@ function Catalogue(props) {
               <span id="price">&nbsp;INR{product.variants[0].price}</span>
             </CardText>
             <CardImgOverlay className="d-flex">
-              {product.variants[0].inventory_quantity != 0 ? (
+              {product.variants[0].inventory_quantity !== 0 ? (
                 <Button id="view-button" className="align-self-center mx-auto">
                   View
                 </Button>
