@@ -15,11 +15,12 @@ npm start
 ```sh
 npm start
 ```
-
+## Demo
+https://user-images.githubusercontent.com/40169051/210279154-5928e7f6-7305-4110-b303-ed56a9fc97fc.mp4
 ## Author
 
 👤 **Nishtha Srivastava**
 
 
-https://user-images.githubusercontent.com/40169051/210279154-5928e7f6-7305-4110-b303-ed56a9fc97fc.mp4
+
 
