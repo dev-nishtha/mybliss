@@ -1,4 +1,4 @@
-<h1 align="center">MyBliss Technical Round Project</h1>
+<h1 align="center">E-commerce website with sort</h1>
 
 > This project is about an e-commerce website displaying multiple products. It has filters to sort these products based on their availability, price, and color.
 
