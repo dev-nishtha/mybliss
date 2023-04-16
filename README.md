@@ -7,7 +7,7 @@
 Clone the repo and run the following to install dependencies:
 
 ```sh
-npm start
+npm i
 ```
 
 ## Usage
